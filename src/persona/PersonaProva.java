@@ -18,6 +18,9 @@ public class PersonaProva {
         String info = p2.info();
         
         System.out.println(info);
+        
+        
+        
     }
     
 }
