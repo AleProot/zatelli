@@ -18,5 +18,5 @@ public class pesce {
     
     p1.setAltezza("12cm");
     
-    p1.setLunghezza("70cm");
+    //p1.setLunghezza("70cm");
 }
