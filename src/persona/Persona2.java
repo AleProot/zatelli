@@ -99,8 +99,9 @@ public class Persona2 {
           
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern(dataDiNascita);
 
+        System.out.println("persona.Persona2.setDataDiNascita()");
     
-    this.dataDiNascita = dataDiNascita;                
+        this.dataDiNascita = dataDiNascita;                
     }
 
     /**
