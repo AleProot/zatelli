@@ -96,11 +96,11 @@ public class Persona2 {
      */
     
     public void setDataDiNascita(String dataDiNascita) {
-        
-        this.dataDiNascita = dataDiNascita;     
-        
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("gg.mm.aaaa");
-                
+          
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern(dataDiNascita);
+
+    
+    this.dataDiNascita = dataDiNascita;                
     }
 
     /**
