@@ -4,7 +4,7 @@ package persona;
  *
  * @author alessandro.zatelli
  */
-public class Persona {
+public class Persona2 {
   //attributi in ordine alfabetico
     public Double altezza;
     public String cognome;
@@ -18,7 +18,7 @@ public class Persona {
      */
     
     
-    public Persona() {
+    public Persona2() {
     }
     /**
      * 
@@ -28,7 +28,7 @@ public class Persona {
      * @param nome
      * @param peso 
      */
-    public Persona(Double altezza, String cognome, String dataDiNascita, String nome, Float peso) {
+    public Persona2(Double altezza, String cognome, String dataDiNascita, String nome, Float peso) {
         this.altezza = altezza;
         this.cognome = cognome;
         this.dataDiNascita = dataDiNascita;
@@ -80,7 +80,9 @@ public class Persona {
      * @return dataDiNascita 
      */
     
-    public String getDataDiNascita() {
+    public String getDataDiNascita(){
+        
+        
         return dataDiNascita;
     }
 
