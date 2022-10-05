@@ -1,5 +1,7 @@
 package persona;
 
+import java.time.format.DateTimeFormatter;
+
 /**
  *
  * @author alessandro.zatelli
@@ -81,7 +83,8 @@ public class Persona2 {
      */
     
     public String getDataDiNascita(){
-        
+     
+
         
         return dataDiNascita;
     }
@@ -93,7 +96,11 @@ public class Persona2 {
      */
     
     public void setDataDiNascita(String dataDiNascita) {
-        this.dataDiNascita = dataDiNascita;
+        
+        this.dataDiNascita = dataDiNascita;     
+        
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("gg.mm.aaaa");
+                
     }
 
     /**
