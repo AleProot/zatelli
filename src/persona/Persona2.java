@@ -1,3 +1,5 @@
+
+
 package persona;
 
 import java.time.format.DateTimeFormatter;
@@ -53,6 +55,10 @@ public class Persona2 {
      */
     
     public void setAltezza(Double altezza) {
+        
+        System.out.println("persona.Persona2.setAltezza()");
+
+        
         this.altezza = altezza;
     }
 
@@ -73,6 +79,10 @@ public class Persona2 {
      */
     
     public void setCognome(String cognome) {
+        
+        System.out.println("persona.Persona2.setCognome()");
+
+        
         this.cognome = cognome;
     }
 
@@ -100,6 +110,20 @@ public class Persona2 {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern(dataDiNascita);
 
         System.out.println("persona.Persona2.setDataDiNascita()");
+        int setDataDiNascita = 0;
+        
+        switch(setDataDiNascita){
+            case 1:
+                System.out.println("13");
+                break;
+            case 2:
+                System.out.println("3");
+                break;
+            case 3:
+                System.out.println("2005");
+                break;
+        }
+        
     
         this.dataDiNascita = dataDiNascita;                
     }
@@ -121,6 +145,11 @@ public class Persona2 {
      */
     
     public void setNome(String nome) {
+        
+        
+        System.out.println("persona.Persona2.setNome()");
+        
+        
         this.nome = nome;
     }
 
@@ -141,6 +170,11 @@ public class Persona2 {
      */
     
     public void setPeso(Float peso) {
+        
+        
+        System.out.println("persona.Persona2.setPeso()");
+
+        
         this.peso = peso;
     }
 
