@@ -12,15 +12,14 @@ public class Persona2 {
   //attributi in ordine alfabetico
     public Double altezza;
     public String cognome;
-    public String dataDiNascita;
     public String nome;
     public Float  peso;
 
-    
+    private String dataDiNascita;
     /**
      * Costruttore della classe Persona senza parametri
      */
-    
+
     
     public Persona2() {
     }
@@ -32,12 +31,13 @@ public class Persona2 {
      * @param nome
      * @param peso 
      */
-    public Persona2(Double altezza, String cognome, String dataDiNascita, String nome, Float peso) {
+    public Persona2(Double altezza, String cognome, String nome, Float peso, String dataDiNascita) {
         this.altezza = altezza;
         this.cognome = cognome;
-        this.dataDiNascita = dataDiNascita;
         this.nome = nome;
         this.peso = peso;
+        
+        this.setDataDiNascita(dataDiNascita);
     }
     /**
      * Restituisce l'altezza della persona 
@@ -45,7 +45,7 @@ public class Persona2 {
      * @return altezza
      */
     public Double getAltezza() {
-        return altezza;
+        return this.altezza;
     }
 
     /**
@@ -69,7 +69,7 @@ public class Persona2 {
      */
     
     public String getCognome() {
-        return cognome;
+        return this.cognome;
     }
 
     /**
@@ -87,55 +87,13 @@ public class Persona2 {
     }
 
     /**
-     * Restituisce la data di nascita della persona
-     * 
-     * @return dataDiNascita 
-     */
-    
-    public String getDataDiNascita(){
-     
-
-        
-        return dataDiNascita;
-    }
-
-    /**
-     * Imposta la data di nascita della persona
-     * 
-     * @param dataDiNascita 
-     */
-    
-    public void setDataDiNascita(String dataDiNascita) {
-          
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern(dataDiNascita);
-
-        System.out.println("persona.Persona2.setDataDiNascita()");
-        int setDataDiNascita = 0;
-        
-        switch(setDataDiNascita){
-            case 1:
-                System.out.println("13");
-                break;
-            case 2:
-                System.out.println("3");
-                break;
-            case 3:
-                System.out.println("2005");
-                break;
-        }
-        
-    
-        this.dataDiNascita = dataDiNascita;                
-    }
-
-    /**
      * Restituisce il nome della persona
      * 
      * @return nome 
      */
     
     public String getNome() {
-        return nome;
+        return this.nome;
     }
 
     /**
@@ -160,7 +118,7 @@ public class Persona2 {
      */
     
     public Float getPeso() {
-        return peso;
+        return this.peso;
     }
 
     /**
@@ -178,6 +136,81 @@ public class Persona2 {
         this.peso = peso;
     }
 
+    
+            /**
+     * Restituisce la data di nascita della persona
+     * 
+     * @return dataDiNascita 
+     */
+    
+    public String getDataDiNascita(){
+     
+
+        return this.dataDiNascita;
+    }
+
+    /**
+     * Imposta la data di nascita della persona
+     * 
+     * @param dataDiNascita 
+     */
+    
+    final public void setDataDiNascita(String dataDiNascita){
+        String annoDiNascitaString, meseDiNascitaString, giornoDiNascitaString;
+        Integer annoDiNascita, meseDiNascita, giornoDiNascita;
+        Boolean valida = false;
+        
+        giornoDiNascitaString = dataDiNascita.substring(0, 2);
+        meseDiNascitaString = dataDiNascita.substring(3, 5);
+        annoDiNascitaString = dataDiNascita.substring(6, 10);
+        
+        giornoDiNascita = Integer.parseInt(giornoDiNascitaString);
+        meseDiNascita = Integer.parseInt(meseDiNascitaString);
+        annoDiNascita = Integer.parseInt(annoDiNascitaString);
+        
+        if (annoDiNascita >= 1000 && annoDiNascita <= 9999) {
+            switch (meseDiNascita) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    if (giornoDiNascita >= 1 && giornoDiNascita <= 31) {
+                        valida = true;
+                        
+                    }
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    if (giornoDiNascita >= 1 && giornoDiNascita <= 30) {
+                        valida = true;
+                        
+                    }
+                    break;
+                case 2: 
+                    if (annoDiNascita % 400 == 0 || (annoDiNascita % 4 == 0 &&
+annoDiNascita % 100 != 0)){
+                        if(giornoDiNascita >= 1 && giornoDiNascita <= 29)
+                            valida = true;
+                        } else
+                            if(giornoDiNascita >= 1 && giornoDiNascita <= 28)
+                                valida = true;
+                    }
+            }
+        
+        if (valida) {
+            this.dataDiNascita = dataDiNascita;
+        
+        
+        }
+    }
+    
+
+    
     /**
      * Restituisce le caratteristiche della persona
      * 
@@ -196,8 +229,6 @@ public class Persona2 {
         return info;
                 
                 
-    }
-    
-     
+    }  
     
 }
