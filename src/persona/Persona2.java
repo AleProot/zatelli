@@ -2,7 +2,8 @@
 
 package persona;
 
-import java.time.format.DateTimeFormatter;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 
 /**
  *
@@ -231,4 +232,32 @@ annoDiNascita % 100 != 0)){
                 
     }  
     
+    public Integer calcoloEta(){
+        ZoneId i = ZoneId.of("Europe/rome");
+        ZonedDataTime zi = ZonedDataTime.now(i);
+        
+        int current_day = zi.getDayOfMonth();
+        int current_month = zi.getMonthValue();
+        int current_year = zi.getYear();
+               
+        String[] splitted = dataDiNascita.split("/");
+        
+        int gg = Integer.parseInt(splitted[0]);
+        int mm = Integer.parseInt(splitted[1]);
+        int aaaa = Integer.parseInt(splitted[2]);
+        
+        int eta = current_year - aaaa;
+        if(mm >= current_month && gg > current_day){
+            eta -=1;
+        }
+        else if(mm > current_month){
+            eta -=1;
+        }
+        
+        return eta;
+    }
+    
+    public Integer validaData(){
+        
+    }
 }
